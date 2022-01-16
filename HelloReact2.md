@@ -54,7 +54,7 @@ react script소스를 인클루드시키면 html에서 react 라이브러리 이
 </body>
 </html>
 ```
-# div 태그안의 엘리먼트 넣기
+# element를 더 만들어보자.
 
 
 ```
