@@ -29,3 +29,50 @@ react script소스를 인클루드시키면 html에서 react 라이브러리 이
 </body>
 </html>
 ```
+
+# createElement를 이용하여 스타일 속성을 부여해보자.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React 2</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+</head>
+<body>
+   <div id="root"></div> 
+   <script type="text/javascript">
+        ReactDOM.render(
+            React.createElement("h1",{"style": {"color": "blue"}},"안녕") ,
+            document.getElementById("root")
+        );
+   </script>
+</body>
+</html>
+```
+# div 태그안의 엘리먼트 넣기
+
+react의 특성 중 하나는 형제컨테이너를 만들 수 없다는 것이다.
+무조건 상위 엘리먼트는 하나만 허용된다. 상위 엘리먼트 안의 또 다른 엘리먼트는 무한하게 만들 수 있다.
+
+```
+<body>
+   <div id="root"></div> 
+   <script type="text/javascript">
+        ReactDOM.render(
+            React.createElement(
+                "div",{"style": {"border":"1px solid red"}},
+                React.createElement("h1",{"style": {"color": "blue"}},"안녕"),
+                React.createElement("h1",{"style": {"color": "red"}},"안녕"),
+                React.createElement("h1",{"style": {"color": "green"}},"안녕"),
+            ),
+            document.getElementById("root")
+        );
+   </script>
+</body>
+</html>
+```
